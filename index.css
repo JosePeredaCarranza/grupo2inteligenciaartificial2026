@@ -391,7 +391,7 @@ body{
 /* SIGUIENTE SECCIÓN */
 .next-section {
     min-height: 100vh;
-    padding: 120px 40px 80px;
+    padding: 30px 40px 0px;
     background:
         radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 35%),
         #0b0b0f;
@@ -401,9 +401,9 @@ body{
 }
 
 .content-box {
-    width: min(100%, 1000px);
+    width: min(100%, 1200px);
     padding: 48px;
-    color: antiquewhite;
+    color: white;
     border-radius: 32px;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.08);
@@ -431,11 +431,11 @@ body{
 }
 /*INTEGRANTES*/
 .integrantes{
-    padding: 80px 40px 40px;
+    padding: 80px 0px 40px;
     text-align: center;
 }
 .integrantes h2{
-    color: antiquewhite;
+    color: white;
 }
 
 .integrantes h2{
@@ -471,12 +471,220 @@ body{
 .miembro h3{
     font-size: 18px;
     font-weight: 600;
-    color: whitesmoke;
+    color: white;
 }
 
 .miembro span{
     font-size: 14px;
     color: rgba(255,255,255,0.6);
+}
+/*CURSO*/
+.curso-section{
+    padding: 120px 24px 80px;
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 30%),
+        #0b0b0f;
+    color: white;
+}
+
+.curso-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.curso-header{
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 50px;
+}
+
+
+.curso-header h2{
+    font-size: clamp(34px, 6vw, 64px);
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+}
+
+.curso-header p{
+    font-size: 18px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+}
+
+.curso-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.glass-card{
+    padding: 28px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.20);
+}
+
+.glass-card h3{
+    font-size: 22px;
+    margin-bottom: 14px;
+    letter-spacing: -0.03em;
+}
+
+.glass-card p{
+    color: rgba(255,255,255,0.74);
+    line-height: 1.7;
+    font-size: 15px;
+}
+.kv-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.kv-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 14px;
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.kv-key{
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+}
+
+.kv-value{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    text-align: right;
+}
+.full-width{
+    grid-column: 1 / -1;
+}
+
+.styled-list{
+    padding-left: 18px;
+    color: rgba(255,255,255,0.74);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.two-columns{
+    columns: 2;
+    column-gap: 40px;
+}
+
+.profesor-card{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+    border-radius: 32px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.24);
+}
+
+.profesor-foto img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 28px;
+    display: block;
+}
+
+.profesor-info h3{
+    font-size: 34px;
+    letter-spacing: -0.04em;
+    margin-bottom: 10px;
+}
+
+.profesor-cargo{
+    color: rgba(255,255,255,0.68);
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.profesor-info p{
+    color: rgba(255,255,255,0.74);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.profesor-datos{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+.profesor-datos div{
+    padding: 18px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.profesor-datos strong{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.profesor-datos span{
+    font-size: 14px;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.5;
+}
+
+.linkedin-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.14);
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.linkedin-btn:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.16);
+}
+
+@media (max-width: 900px){
+    .curso-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .profesor-card{
+        grid-template-columns: 1fr;
+    }
+
+    .profesor-datos{
+        grid-template-columns: 1fr;
+    }
+
+    .two-columns{
+        columns: 1;
+    }
 }
 /*CUADRO*/
 .tabla-section{
@@ -484,7 +692,7 @@ body{
 }
 
 .tabla-section h2{
-    color: antiquewhite;
+    color: white;
     text-align: center;
     font-size: 40px;
     margin-bottom: 40px;
@@ -508,7 +716,7 @@ body{
     
 }
 .tabla-container tbody tr td a:visited{
-    color: whitesmoke;
+    color: white;
     
 }
 table{
@@ -538,7 +746,105 @@ td{
 tr:hover{
     background: rgba(255,255,255,0.04);
 }
+/*PLANTA*/
+.planta-section{
+    padding: 120px 24px 80px;
+}
 
+.planta-container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.planta-header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.planta-header h2{
+    color: white;
+    font-size: clamp(34px, 6vw, 60px);
+    letter-spacing: -0.04em;
+    margin-bottom: 10px;
+}
+
+.planta-header p{
+    color: rgba(255,255,255,0.7);
+}
+.planta-progreso{
+    margin-bottom: 40px;
+}
+
+.progreso-info{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+}
+
+.barra{
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    overflow: hidden;
+}
+
+.barra-fill{
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        #4ade80,
+        #22c55e
+    );
+
+    transition: width 0.8s ease;
+}
+/* TIMELINE */
+.planta-timeline{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ITEM */
+.planta-item{
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: center;
+
+    padding: 18px;
+    border-radius: 24px;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+}
+
+/* IMAGEN */
+.planta-img img{
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* INFO */
+.planta-fecha{
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+}
+
+.planta-info p{
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 6px;
+}
 /*FOOTER*/
 .footer{
     margin-top: 80px;
@@ -564,6 +870,7 @@ tr:hover{
 
 /* IZQUIERDA */
 .footer-left h3{
+    color: white;
     font-size: 20px;
     margin-bottom: 8px;
 }
@@ -573,23 +880,6 @@ tr:hover{
     color: rgba(255,255,255,0.6);
 }
 
-/* CENTRO */
-.footer-center{
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.footer-center a{
-    text-decoration: none;
-    color: rgba(255,255,255,0.7);
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.footer-center a:hover{
-    color: white;
-}
 
 /* DERECHA */
 .footer-right{

@@ -115,4 +115,30 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlide(0);
         startAutoPlay();
     }
+    function actualizarProgresoPlanta() {
+        const inicio = new Date("2026-03-30"); // lunes 30 marzo
+        const semanas = 16;
+        const fin = new Date(inicio);
+        fin.setDate(fin.getDate() + semanas * 7);
+
+        const hoy = new Date();
+
+        const total = fin - inicio;
+        const actual = hoy - inicio;
+
+        let progreso = (actual / total) * 100;
+
+        if (progreso < 0) progreso = 0;
+        if (progreso > 100) progreso = 100;
+
+        const barra = document.getElementById("barra-fill");
+        const texto = document.getElementById("progreso-texto");
+
+        if (barra && texto) {
+            barra.style.width = progreso + "%";
+            texto.textContent = Math.round(progreso) + "%";
+        }
+    }
+
+actualizarProgresoPlanta();
 });
