@@ -253,12 +253,12 @@ body{
 .panel:last-child { z-index: 1; }
 
 .wave-panel img {
-    -webkit-mask-image: url("imagenes/carousel/wave-mask.svg");
+    -webkit-mask-image: url("public/carousel/wave-mask.svg");
     -webkit-mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
 
-    mask-image: url("imagenes/carousel/wave-mask.svg");
+    mask-image: url("public/carousel/wave-mask.svg");
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
     mask-position: center;
@@ -526,6 +526,12 @@ body{
     line-height: 1.7;
     font-size: 15px;
 }
+.introduccion{
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
 .kv-list{
     display: flex;
     flex-direction: column;
@@ -638,7 +644,7 @@ body{
     line-height: 1.5;
 }
 
-.linkedin-btn{
+.curso-btn{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -651,7 +657,7 @@ body{
     transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.linkedin-btn:hover{
+.curso-btn:hover{
     transform: translateY(-2px);
     background: rgba(255,255,255,0.16);
 }
@@ -732,6 +738,10 @@ td{
 
 tr:hover{
     background: rgba(255,255,255,0.04);
+}
+
+.contenido{
+    color: rgb(163, 161, 161);
 }
 /*PLANTA*/
 .planta-section{

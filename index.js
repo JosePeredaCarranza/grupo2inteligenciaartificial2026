@@ -5,11 +5,59 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextSection = document.getElementById("contenido");
     const contentBox = document.querySelector(".content-box");
     const carousel = document.querySelector(".carousel");
-
+    const iosNav = document.querySelector(".ios-nav");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("#hero, #contenido, #curso, #planta");
     let currentIndex = 0;
     let autoPlay = null;
     let locked = false;
+    navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            const destino = link.getAttribute("href");
 
+            if (!destino || !destino.startsWith("#")) return;
+
+            const seccion = document.querySelector(destino);
+            if (!seccion) return;
+
+            e.preventDefault();
+
+            activarLink(seccion.id);
+
+            seccion.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+    function activarLink(idSeccion) {
+        navLinks.forEach((link) => {
+            const href = link.getAttribute("href");
+            link.classList.toggle("active", href === `#${idSeccion}`);
+        });
+    }
+
+    if (sections.length && navLinks.length) {
+        const observerSecciones = new IntersectionObserver((entries) => {
+            let visible = null;
+
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    visible = entry.target.id;
+                }
+            });
+
+            if (visible) {
+                activarLink(visible);
+            }
+        }, {
+            threshold: 0.2,
+            rootMargin: "-10% 0px -50% 0px"
+        });
+
+        sections.forEach((section) => observerSecciones.observe(section));
+    }
+    
     function showSlide(index) {
         if (!slides.length || !dots.length) return;
 
@@ -56,6 +104,16 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             locked = false;
         }, 1200);
+    }
+
+    function actualizarNavScroll() {
+        if (!iosNav) return;
+
+        if (window.scrollY > 40) {
+            iosNav.classList.add("scrolled");
+        } else {
+            iosNav.classList.remove("scrolled");
+        }
     }
 
     if (hero && nextSection) {
@@ -115,8 +173,9 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlide(0);
         startAutoPlay();
     }
+
     function actualizarProgresoPlanta() {
-        const inicio = new Date("2026-03-30"); // lunes 30 marzo
+        const inicio = new Date("2026-03-30");
         const semanas = 16;
         const fin = new Date(inicio);
         fin.setDate(fin.getDate() + semanas * 7);
@@ -140,5 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-actualizarProgresoPlanta();
+    window.addEventListener("scroll", actualizarNavScroll);
+    actualizarNavScroll();
+    actualizarProgresoPlanta();
 });
